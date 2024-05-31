@@ -1,10 +1,12 @@
 import argparse
+import math
 
 
 def is_prime(value: int) -> bool:
     if value < 2:
         return False
-    for i in range(2, value):
+    square_root = int(math.sqrt(value)) + 1
+    for i in range(2, square_root):
         if value % i == 0:
             return False
     return True
@@ -17,7 +19,6 @@ def prime_generator(start: int, end: int) -> list:
     for i in range(start, end):
         if is_prime(i):
             prime_numbers.append(i)
-
     return prime_numbers
 
 
