@@ -21,5 +21,5 @@ python main.py --start 0 --end 100
 To run tests:
 
 ```bash
-- python -m unittest test_prime_generator.py
+python -m unittest test_prime_generator.py
 ```
