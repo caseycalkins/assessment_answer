@@ -18,16 +18,18 @@ class TestPrimeGenerator(unittest.TestCase):
         self.assertTrue(is_prime(11))
 
     def test_prime_generator(self):
-        self.assertEqual(prime_generator(0, 10), [2, 3, 5, 7])
-        self.assertEqual(prime_generator(10, 20), [11, 13, 17, 19])
-        self.assertEqual(prime_generator(20, 30), [23, 29])
-        self.assertEqual(prime_generator(30, 40), [31, 37])
-        self.assertEqual(prime_generator(40, 50), [41, 43, 47])
-        self.assertEqual(prime_generator(50, 60), [53, 59])
-        self.assertEqual(prime_generator(60, 70), [61, 67])
-        self.assertEqual(prime_generator(70, 80), [71, 73, 79])
-        self.assertEqual(prime_generator(80, 90), [83, 89])
-        self.assertEqual(prime_generator(90, 102), [97, 101])
+        self.assertEqual(list(prime_generator(10, 1)), [2, 3, 5, 7])
+        self.assertEqual(list(prime_generator(0, 10)), [2, 3, 5, 7])
+        self.assertEqual(list(prime_generator(10, 20)), [11, 13, 17, 19])
+        self.assertEqual(list(prime_generator(20, 30)), [23, 29])
+        self.assertEqual(list(prime_generator(30, 40)), [31, 37])
+        self.assertEqual(list(prime_generator(40, 50)), [41, 43, 47])
+        self.assertEqual(list(prime_generator(50, 60)), [53, 59])
+        self.assertEqual(list(prime_generator(60, 70)), [61, 67])
+        self.assertEqual(list(prime_generator(70, 80)), [71, 73, 79])
+        self.assertEqual(list(prime_generator(80, 90)), [83, 89])
+        self.assertEqual(list(prime_generator(90, 102)), [97, 101])
+        self.assertEqual(list(prime_generator(7900, 7920)), [7901, 7907, 7919])
 
 
 if __name__ == "__main__":
