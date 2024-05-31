@@ -12,14 +12,12 @@ def is_prime(value: int) -> bool:
     return True
 
 
-def prime_generator(start: int, end: int) -> list:
+def prime_generator(start: int, end: int):
     if start > end:
         start, end = end, start
-    prime_numbers = []
-    for i in range(start, end):
+    for i in range(start, end + 1):
         if is_prime(i):
-            prime_numbers.append(i)
-    return prime_numbers
+            yield i
 
 
 if __name__ == "__main__":
@@ -28,4 +26,5 @@ if __name__ == "__main__":
     parser.add_argument("--end", type=int, help="End number")
     args = parser.parse_args()
 
-    prime_generator(args.start, args.end)
+    prime_numbers = list(prime_generator(args.start, args.end))
+    print(prime_numbers)
